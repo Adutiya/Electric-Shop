@@ -1,8 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../redux/cartSlice";
-import Card from "../components/Card";
+import CartCard from "../components/CartCard";
+import PriceCard from "../components/PriceCard";
 
-function Cart(props) {
+function Cart() {
   const CartItems = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
 
@@ -13,33 +14,32 @@ function Cart(props) {
       {CartItems.length === 0 ? (
         <p className="text-lg text-gray-600">Your cart is empty</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-  {CartItems.map((Photo) => (
-    <div
-      key={Photo.id}
-      className="flex flex-col items-center bg-white shadow-md rounded-xl p-4"
-    >
-      {/* Card */}
-      <Card
-        id={Photo.id}
-        name={Photo.name}
-        price={Photo.price}
-        number={Photo.number}
-        image={Photo.image}
-       
-      />
+        // Flex layout for cart items and price card
+        <div className="flex flex-col-reverse lg:flex-row gap-6">
+          {/* Left side: Cart Items */}
+          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {CartItems.map((Photo) => (
+              <div
+                key={Photo.id}
+                className="flex flex-col items-center bg-white shadow-md rounded-xl p-4"
+              >
+                <CartCard
+                  id={Photo.id}
+                  name={Photo.name}
+                  price={Photo.price}
+                  number={Photo.number}
+                  image={Photo.image}
+                />
+                
+              </div>
+            ))}
+          </div>
 
-      {/* Button - contained in same flex box */}
-      <button
-        onClick={() => dispatch(removeFromCart(Photo.id))}
-        className="mt-4 w-full bg-red-500 hover:bg-red-600 text-white text-sm font-semibold py-2 rounded"
-      >
-        Remove from Cart
-      </button>
-    </div>
-  ))}
-</div>
-
+          {/* Right side: PriceCard */}
+          <div className="w-full lg:w-[300px] bg-white shadow-md rounded-xl p-6 h-fit sticky top-24">
+            <PriceCard />
+          </div>
+        </div>
       )}
     </div>
   );

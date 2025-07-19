@@ -1,5 +1,6 @@
 import { removeFromCart } from "../redux/cartSlice";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 function CartCard(props) {
   const dispatch = useDispatch();
@@ -41,9 +42,9 @@ function CartCard(props) {
 
       {/* Buy button */}
       <div className="ml-auto flex items-start">
-        <button className="text-sm bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded shadow">
+        <Link   to={`/checkout/${props.id}`}className="text-sm bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded shadow">
           Buy
-        </button>
+        </Link>
       </div>
     </div>
   );

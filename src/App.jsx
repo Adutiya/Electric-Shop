@@ -3,6 +3,8 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Productdetails from './Pages/ProductDetails';
 import RegisterUser from './Pages/RegisterUser';
+import Checkout from './Pages/Checkout';
+import PoolCheckout from './Pages/PoolCheckout';
 
 import {BrowserRouter, Routes,Route } from 'react-router-dom';
 import Home from './Pages/Home';
@@ -26,6 +28,8 @@ function App(props) {
     <Route path="/cart" element={<Cart/>}/>
     <Route path="/searchpage" element={<SearchPage/>}/>
     <Route path="/register" element ={<RegisterUser/>}/>
+    <Route path="/checkout/:id" element={<Checkout Photos={Photos}/>}/>
+    <Route path="/checkout2" element ={<PoolCheckout/>}/>
   </Routes>
   </div>
   </BrowserRouter>

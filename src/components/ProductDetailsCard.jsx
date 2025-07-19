@@ -53,9 +53,9 @@ function ProductDetailsCard(props) {
           >
             {itemExists ? "Go to Cart" : "Add to Cart"}
           </button>
-          <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded-xl font-semibold">
+          <Link  to={`/checkout/${props.id}`} className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded-xl font-semibold">
             Buy Now
-          </button>
+          </Link>
         </div>
       </div>
     </div>

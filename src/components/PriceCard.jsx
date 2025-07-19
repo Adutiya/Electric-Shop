@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function PriceCard() {
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -23,9 +24,9 @@ function PriceCard() {
         </div>
       </div>
 
-      <button className="mt-6 w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 rounded shadow-md transition">
+      <Link  to="/checkout2" className="mt-6 w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 rounded shadow-md transition">
         PLACE ORDER
-      </button>
+      </Link>
     </div>
   );
 }

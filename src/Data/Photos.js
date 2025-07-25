@@ -7,6 +7,7 @@ import fan from '../images/fan.jpg';
 import lamp from '../images/lamp.webp'
 import laptop from '../images/laptop.avif'
 import heater from '../images/heater.jpg'
+import TV from '../images/TV.jpeg'
 
 
 const Photos = [
@@ -16,7 +17,7 @@ const Photos = [
     { name: "Fan", price: "600", id: "4", number: "100" ,image:fan,detail:"The best in quality Fan from Adutiya Private limited"},
     { name: "Heater", price: "2500", id: "5", number: "45",image:heater,detail:"kiran bai ko favourite heater " },
     { name: "Cooler", price: "8000", id: "6", number: "67",detail:"kaise ke chalega cooler agar kharidega nai to"},
-    { name: "TV", price: "25000", id: "7", number: "88"},
+    { name: "TV", price: "25000", id: "7", number: "88",image:TV},
     { name: "Fridge", price: "18000", id: "8", number: "92" },
     { name: "Washing Machine", price: "14000", id: "9", number:"33"},
     { name: "Microwave", price: "5000", id: "10", number: "53" },

@@ -2,20 +2,25 @@ import { Link } from "react-router-dom";
 import { useDispatch,useSelector } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 function ProductDetailsCard(props) {
   const dispatch=useDispatch();
   const navigate = useNavigate();
   const cartItems = useSelector((state) => state.cart.cartItems);
   const itemExists = cartItems.find((i) => i.id === props.id);
   const handleAddToCart = () => {
-    
+    if (props.stock <= 0) {
+      toast.error("Product out of stock");
+      return;
+    }
+  
     if (itemExists) {
-      navigate("/cart"); // Navigate if item already exists
+      navigate("/cart");
     } else {
       dispatch(addToCart(props));
-      
     }
   };
+  
   return (
     <div className="max-w-5xl mx-auto p-6 bg-white rounded-2xl shadow-md mt-6 flex flex-col md:flex-row gap-8">
       {/* Image Section */}

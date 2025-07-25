@@ -27,7 +27,7 @@ function Cart() {
                   id={Photo.id}
                   name={Photo.name}
                   price={Photo.price}
-                  number={Photo.number}
+                  stock={Photo.number}
                   image={Photo.image}
                 />
                 

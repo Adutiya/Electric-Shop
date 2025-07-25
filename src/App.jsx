@@ -12,6 +12,8 @@ import Photos from './Data/Photos';
 import Login from './Pages/Login';
 import Cart from './Pages/Cart';
 import SearchPage from './Pages/SearchPage';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App(props) {
   
 
@@ -32,6 +34,7 @@ function App(props) {
     <Route path="/checkout2" element ={<PoolCheckout/>}/>
   </Routes>
   </div>
+  <ToastContainer />
   </BrowserRouter>
    </>
   

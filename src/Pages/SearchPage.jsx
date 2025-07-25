@@ -29,6 +29,7 @@ function SearchPage(props){
                 price={photo.price}
                 category={photo.category}
                 subcategory={photo.subcategory}
+                stock={photo.number}
                 // pass other props as needed
               />
             ))}

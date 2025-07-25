@@ -6,7 +6,7 @@ function Home(props){
           id={Photo.id}
           name={Photo.name}
           price={Photo.price}
-          number={Photo.number}
+          stock={Photo.number}
           key={Photo.id}
           image={Photo.image}
         />

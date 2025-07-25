@@ -1,5 +1,6 @@
 import Buycard from "../components/BuyCard";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Checkout(props) {
   const { id } = useParams();
@@ -7,14 +8,14 @@ function Checkout(props) {
 
   return (
     <div className="max-w-4xl mx-auto p-4">
-      {product ? (
+      {product&&product.number>0? (
         <>
           <Buycard
             id={product.id}
             name={product.name}
             price={product.price}
             image={product.image}
-            number={product.number}
+            stock={product.number}
           />
 
           {/* Fixed bottom price and continue button */}
@@ -22,7 +23,7 @@ function Checkout(props) {
             <p className="text-xl font-semibold">
               Total: ₹{product.price}
             </p>
-            <button   onClick={() => alert("Proceeding to checkout...")}className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">
+            <button   onClick={() =>toast.success("Product placed successfully")}className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">
               Continue
             </button>
           </div>
@@ -35,5 +36,6 @@ function Checkout(props) {
     </div>
   );
 }
+
 
 export default Checkout;

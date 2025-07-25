@@ -1,5 +1,6 @@
 import CartCard from "../components/CartCard";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 function PoolCheckout() {
   const CartItems = useSelector((state) => state.cart.cartItems);
@@ -39,7 +40,7 @@ function PoolCheckout() {
           </div>
           <button
             className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg transition"
-            onClick={() => alert("Proceeding to checkout...")}
+            onClick={() => toast.success("Product placed successfully")}
           >
             Continue
           </button>

@@ -24,7 +24,7 @@ const Photos = [
     { name: "Mixer", price: "2200", id: "kiran", number: "33",},
     { name: "Grinder", price: "2500", id: "13", number: "25"},
     { name: "Lamp", price: "300", id: "14", number: "47" ,image:lamp},
-    { name: "Charger", price: "400", id: "15", number: "64"},
+    { name: "Charger", price: "400", id: "15", number: "0"},
     { name: "Laptop", price: "55000", id: "16", number: "18" ,image:laptop},
     { name: "Tablet", price: "25000", id: "17", number: "38"},
     { name: "Smartphone", price: "35000", id: "18", number: "77" },
